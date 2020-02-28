@@ -19,7 +19,7 @@ Rectangle {
             anchors.leftMargin: 24
             font.pixelSize: 12
             font.bold: true
-            text: dataModel.nowpath
+            text: dataModel.currentPath
         }
     }
 }

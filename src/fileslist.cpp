@@ -47,19 +47,16 @@ QHash<int, QByteArray> FilesList::roleNames() const
     return roles;
 }
 
-void FilesList::updateData(QString Address)
+void FilesList::updateData(QString Path)
 {
-    if (Address == "") {
-    }
-    else {
-    beginResetModel ();
-    QDir way(Address);
-    QStringList filters;
-    filters << "*.*"<<"*";
 
+    beginResetModel();
+
+    setCurrentPath(Path);
+    QDir way(currentPath());
     m_data.clear();
 
-    QList<QFileInfo>list = way.entryInfoList (filters, QDir::AllEntries | QDir::NoDotAndDotDot);
+    QList<QFileInfo>list = way.entryInfoList (QDir::AllEntries | QDir::NoDotAndDotDot);
     for(auto iter: list) {
         if( iter.completeSuffix()=="") {
             m_data.append(Data(iter.baseName(), iter.filePath(),"<папка>"));
@@ -69,40 +66,34 @@ void FilesList::updateData(QString Address)
         }
     }
 
-
-    setOldPath(Nowpath());
-
-    setNowpath(Address);
-
     endResetModel ();
-    }
+
 }
 
-QString FilesList::oldPath() const
+void FilesList::goHome()
 {
-    return m_oldPath;
+    updateData(QStandardPaths::writableLocation(QStandardPaths::HomeLocation));
 }
 
-QString FilesList::Nowpath() const
+void FilesList::goBack()
 {
-    return m_nowpath;
+    QDir way(m_currentPath);
+    way.cdUp();
+    updateData(way.path());
 }
 
-void FilesList::setOldPath(QString oldPath)
+QString FilesList::currentPath() const
 {
-    if (m_oldPath == oldPath)
+    return m_currentPath;
+}
+
+void FilesList::setCurrentPath(QString currentPath)
+{
+    if (m_currentPath == currentPath)
         return;
 
-    m_oldPath = oldPath;
-    emit oldPathChanged(m_oldPath);
+    m_currentPath = currentPath;
+    emit currentPathChanged(m_currentPath);
 }
 
-void FilesList::setNowpath(QString nowpath)
-{
-    if (m_nowpath == nowpath)
-        return;
-
-    m_nowpath = nowpath;
-    emit NowpathChanged(m_nowpath);
-}
 

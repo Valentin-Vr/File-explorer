@@ -25,6 +25,6 @@ Rectangle {
     MouseArea {
         id: mouseArea
         anchors.fill: parent
-        onClicked:dataModel.updateData(dataModel.oldPath)
+        onClicked:dataModel.goBack()
     }
 }

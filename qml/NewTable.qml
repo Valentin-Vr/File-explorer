@@ -16,7 +16,7 @@ Rectangle {
         TableViewColumn {
             width: parent.width*0.8
             title: "Name"
-            delegate: TableName {
+            delegate: ColumnName {
                 onDoubclicked: {
                     if(model.flag === "<папка>") {
                         dataModel.updateData(model.path)
@@ -31,7 +31,7 @@ Rectangle {
         TableViewColumn {
             width: parent.width*0.2
             title: "Flag"
-            delegate: TableFlag {
+            delegate: ColumnFlag {
             }
         }
     }

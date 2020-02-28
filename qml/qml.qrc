@@ -4,8 +4,8 @@
         <file>NewTable.qml</file>
         <file>HomeFile.qml</file>
         <file>MainMenu.qml</file>
-        <file>TableName.qml</file>
-        <file>TableFlag.qml</file>
+        <file>ColumnName.qml</file>
+        <file>ColumnFlag.qml</file>
         <file>ButtonBack.qml</file>
         <file>PathMenu.qml</file>
     </qresource>

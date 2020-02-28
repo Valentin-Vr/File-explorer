@@ -8,8 +8,6 @@
 class FilesList : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(QString nowpath READ Nowpath WRITE setNowpath NOTIFY NowpathChanged)
-    Q_PROPERTY(QString oldPath READ oldPath WRITE setOldPath NOTIFY oldPathChanged)
 public:
     enum Roles {
         Name,
@@ -23,34 +21,25 @@ public:
     QVariant data(const QModelIndex &index, int Role = Qt::DisplayRole) const override;
     QHash<int, QByteArray> roleNames() const override;
 
-    Q_INVOKABLE void updateData(QString Address);
+    Q_INVOKABLE void updateData(QString Path);
 
+    Q_INVOKABLE void goHome();
+//    Q_INVOKABLE void goToDir(const QString &path);
+    Q_INVOKABLE void goBack();
 
+    Q_PROPERTY(QString currentPath READ currentPath NOTIFY currentPathChanged)
 
+    QString currentPath() const;
 
-    QString oldPath() const;
-
-    QString Nowpath() const;
-
-public slots:
-
-
-    void setOldPath(QString oldPath);
-
-    void setNowpath(QString nowpath);
+    void setCurrentPath(QString currentPath);
 
 signals:
-
-
-    void oldPathChanged(QString oldPath);
-
-    void NowpathChanged(QString nowpath);
+    void currentPathChanged(QString currentPath);
 
 private:
     QList<Data>m_data;
 
-    QString m_oldPath;
-    QString m_nowpath;
+    QString m_currentPath;
 };
 
 #endif // FILESLIST_H
