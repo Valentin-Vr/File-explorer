@@ -1,7 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>main.qml</file>
-        <file>creator-gs-01.png</file>
-        <file>AnotherWindow.qml</file>
-    </qresource>
-</RCC>

@@ -1,14 +1,13 @@
-QT += quick
-QT += widgets
+QT += quick core gui multimedia
+
 CONFIG += c++11
 DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
-        main.cpp \
-        newwindow.cpp \
-        openimage.cpp \
-        openpdf.cpp
+        src/executionfile.cpp \
+        src/fileslist.cpp \
+        src/main.cpp
 
-RESOURCES += qml.qrc
+RESOURCES += qml/qml.qrc
 QML_IMPORT_PATH =
 QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -16,8 +15,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    newwindow.h \
-    openimage.h \
-    openpdf.h
+   src/data.h \
+   src/executionfile.h \
+   src/fileslist.h
 
 DISTFILES +=
