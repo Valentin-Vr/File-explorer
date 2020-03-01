@@ -2,9 +2,10 @@ import QtQuick 2.0
 import QtGraphicalEffects 1.12
 
 Rectangle {
-    id:clicBack
-    color: "transparent"
-
+    id: rootbutton
+    signal clicked()
+    color:backgroundColor
+    height: parent.height
 
     RadialGradient {
         anchors.fill: parent
@@ -18,13 +19,12 @@ Rectangle {
         id: icon
         anchors.centerIn: parent
         fillMode: Image.PreserveAspectFit
-        source: "/imeg/back"
+        source: icons[model.index]
     }
-
 
     MouseArea {
         id: mouseArea
         anchors.fill: parent
-        onClicked:dataModel.goBack()
+        onClicked: rootbutton.clicked()
     }
 }

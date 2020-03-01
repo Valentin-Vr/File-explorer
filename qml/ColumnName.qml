@@ -14,7 +14,7 @@ Rectangle {
         }
         font.pixelSize: 12
         color: "#000000"
-        text: model.name
+        text:model.name
     }
     MouseArea {
         anchors.fill: parent

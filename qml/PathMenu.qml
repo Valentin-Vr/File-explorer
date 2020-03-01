@@ -2,7 +2,7 @@ import QtQuick 2.0
 import QtQuick.Controls 2.5
 
 Rectangle {
-    color: "#F0F8FF"
+    color:backgroundColor
     Rectangle {
         height: 20
         color: "#FFFFFF"

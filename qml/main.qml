@@ -8,7 +8,7 @@ Window {
     width: 640
     height: 480
     title: qsTr("File explorer")
-
+    color: "#F0F8FF" // crimson
     HomeFile {
         anchors.fill: parent
     }

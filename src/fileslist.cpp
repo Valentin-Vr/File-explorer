@@ -72,7 +72,7 @@ void FilesList::updateData(QString Path)
 
 void FilesList::goHome()
 {
-    updateData(QStandardPaths::writableLocation(QStandardPaths::HomeLocation));
+    updateData(QStandardPaths::writableLocation(QStandardPaths::DesktopLocation));
 }
 
 void FilesList::goBack()

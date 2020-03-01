@@ -6,10 +6,11 @@
         <file>MainMenu.qml</file>
         <file>ColumnName.qml</file>
         <file>ColumnFlag.qml</file>
-        <file>ButtonBack.qml</file>
         <file>PathMenu.qml</file>
+        <file>MasterButton.qml</file>
     </qresource>
     <qresource prefix="/imeg">
         <file alias="back">imeg/back-icon.png</file>
+        <file alias="home">imeg/home.png</file>
     </qresource>
 </RCC>
