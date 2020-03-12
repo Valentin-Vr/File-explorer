@@ -5,16 +5,33 @@ import QtQuick.Controls 2.5
 Column {
     property var icons:["/imeg/home","/imeg/back"]
     property color backgroundColor: "transparent"
+
     MenuBar {
-        id: menuBar
         width: parent.width
-        height:20
+        height:40
+        Menu {
+            title: qsTr("&File")
+            Action { text: qsTr("&Open...") }
+            Action { text: qsTr("&Save") }
+            Action { text: qsTr("Save &As...") }
+            MenuSeparator { }
+            Action { text: qsTr("&Quit") }
+        }
+        Menu {
+            title: qsTr("&Edit")
+            Action { text: qsTr("Cu&t") }
+            Action { text: qsTr("&Copy") }
+            Action { text: qsTr("&Paste") }
+        }
+        Menu {
+            title: qsTr("&Help")
+            Action { text: qsTr("&About") }
+        }
     }
 
     Row {
         width: parent.width
         height:30
-        spacing: 2
         Row {
             id: namesButton
             height: parent.height
@@ -29,9 +46,7 @@ Column {
             }
         }
 
-
         PathMenu {
-            anchors.right: parent.right
             width: parent.width-namesButton.width
             height:parent.height
         }

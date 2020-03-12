@@ -5,7 +5,7 @@ Rectangle {
     id: rootbutton
     signal clicked()
     color:backgroundColor
-    height: parent.height
+    height: icon.height
 
     RadialGradient {
         anchors.fill: parent

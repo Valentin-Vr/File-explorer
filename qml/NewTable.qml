@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 1.0
+import space.developers 1.0
 
 Rectangle {
     id:colorRecta
@@ -7,7 +8,6 @@ Rectangle {
 
     TableView {
         id: view
-
         anchors.margins: 5
         anchors.fill: parent
         model: dataModel
@@ -17,7 +17,7 @@ Rectangle {
             width: parent.width*0.8
             title: "Name"
             delegate: ColumnName {
-                onDoubclicked: {
+                onDoubClicked:{
                     if(model.flag === "<папка>") {
                         dataModel.updateData(model.path)
                     }
@@ -25,6 +25,7 @@ Rectangle {
                         workFile.openFile(model.path,model.flag)
                     }
                 }
+                onRightClicked: ContextMenu.path = model.path
             }
         }
 

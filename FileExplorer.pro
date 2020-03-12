@@ -3,6 +3,7 @@ QT += quick core gui multimedia
 CONFIG += c++11
 DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
+        src/contextmenu.cpp \
         src/executionfile.cpp \
         src/fileslist.cpp \
         src/main.cpp
@@ -15,6 +16,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+   src/contextmenu.h \
    src/data.h \
    src/executionfile.h \
    src/fileslist.h

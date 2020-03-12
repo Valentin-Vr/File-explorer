@@ -2,6 +2,12 @@
 #include <QQmlApplicationEngine>
 #include "fileslist.h"
 #include "executionfile.h"
+#include "contextmenu.h"
+
+static QObject *menu_context(QQmlEngine *, QJSEngine *)
+{
+    return new ContextMenu;
+}
 
 int main(int argc, char *argv[])
 {
@@ -11,7 +17,7 @@ int main(int argc, char *argv[])
 
     qmlRegisterType<FilesList>("space.developers", 1, 0, "NewTable");
     qmlRegisterType<ExecutionFile>("space.developers", 1, 0, "WorkFile");
-
+    qmlRegisterSingletonType<ContextMenu>("space.developers", 1, 0, "ContextMenu",menu_context);
 
     QQmlApplicationEngine engine;
 

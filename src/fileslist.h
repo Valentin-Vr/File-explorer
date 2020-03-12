@@ -8,6 +8,7 @@
 class FilesList : public QAbstractListModel
 {
     Q_OBJECT
+    Q_PROPERTY(QString currentPath READ currentPath NOTIFY currentPathChanged)
 public:
     enum Roles {
         Name,
@@ -26,8 +27,6 @@ public:
     Q_INVOKABLE void goHome();
 //    Q_INVOKABLE void goToDir(const QString &path);
     Q_INVOKABLE void goBack();
-
-    Q_PROPERTY(QString currentPath READ currentPath NOTIFY currentPathChanged)
 
     QString currentPath() const;
 

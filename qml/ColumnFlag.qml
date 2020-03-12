@@ -2,7 +2,6 @@ import QtQuick 2.0
 
 Rectangle {
     id: flag
-
     width: parent.width
     height: textflag.height + 0.9 * textflag.height
     Text {

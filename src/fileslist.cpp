@@ -50,7 +50,7 @@ QHash<int, QByteArray> FilesList::roleNames() const
 void FilesList::updateData(QString Path)
 {
 
-    beginResetModel();
+
 
     setCurrentPath(Path);
     QDir way(currentPath());
@@ -65,7 +65,7 @@ void FilesList::updateData(QString Path)
             m_data.append(Data(iter.baseName(), iter.filePath(),iter.completeSuffix()));
         }
     }
-
+    beginResetModel();
     endResetModel ();
 
 }
