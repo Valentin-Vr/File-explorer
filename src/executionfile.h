@@ -1,16 +1,21 @@
 #ifndef EXECUTIONFILE_H
 #define EXECUTIONFILE_H
-#include <QObject>
+#include <QPainter>
+#include <QQuickPaintedItem>
 
-class ExecutionFile : public QObject
+class ExecutionFile : public QQuickPaintedItem
 {
     Q_OBJECT
 public:
-    ExecutionFile(QObject *parent = nullptr);
-    Q_INVOKABLE void openFile(QString path,QString flag);
+    ExecutionFile(QQuickItem *parent = nullptr);
+
+    void paint(QPainter *painter) override;
+
+    Q_INVOKABLE void openFile(const QString &path, const QString &flag);
+    Q_INVOKABLE void filePath(const QString &path);
 
 private:
- QString m_fale;
+ QString m_filePath;
 };
 
 #endif // EXECUTIONFILE_H

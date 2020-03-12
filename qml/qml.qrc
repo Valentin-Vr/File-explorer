@@ -8,6 +8,7 @@
         <file>ColumnFlag.qml</file>
         <file>PathMenu.qml</file>
         <file>MasterButton.qml</file>
+        <file>FileOpenWindow.qml</file>
     </qresource>
     <qresource prefix="/imeg">
         <file alias="back">imeg/back-icon.png</file>

@@ -10,11 +10,10 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     qmlRegisterType<FilesList>("space.developers", 1, 0, "NewTable");
-    qmlRegisterType<ExecutionFile>("space.developers", 1, 0, "WorkFile");
+    qmlRegisterType<ExecutionFile>("space.developers", 1, 0, "WorkWithFiles");
 
 
     QQmlApplicationEngine engine;
-
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,

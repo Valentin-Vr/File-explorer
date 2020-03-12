@@ -17,9 +17,8 @@ Window {
         id: dataModel
     }
 
-    WorkFile {
-        id: workFile
+    WorkWithFiles {
+        id: workWithFiles
     }
-
 }
 

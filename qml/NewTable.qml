@@ -1,6 +1,8 @@
 import QtQuick 2.0
 import QtQuick.Controls 1.0
 
+import space.developers 1.0
+
 Rectangle {
     id:colorRecta
     color: "#F0F8FF" // crimson
@@ -22,7 +24,8 @@ Rectangle {
                         dataModel.updateData(model.path)
                     }
                     else {
-                        workFile.openFile(model.path,model.flag)
+                        workWithFiles.filePath(model.path)
+                        workWithFiles.openFile(model.path, model.flag)
                     }
                 }
             }
