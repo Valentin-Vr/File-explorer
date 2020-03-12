@@ -1,14 +1,14 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.5
 
-
 Column {
-    property var icons:["/imeg/home","/imeg/back"]
+    property var icons: ["/imeg/home","/imeg/back"]
     property color backgroundColor: "transparent"
-
+    
     MenuBar {
         width: parent.width
-        height:40
+        height: 40
+        
         Menu {
             title: qsTr("&File")
             Action { text: qsTr("&Open...") }
@@ -17,12 +17,14 @@ Column {
             MenuSeparator { }
             Action { text: qsTr("&Quit") }
         }
+        
         Menu {
             title: qsTr("&Edit")
             Action { text: qsTr("Cu&t") }
             Action { text: qsTr("&Copy") }
             Action { text: qsTr("&Paste") }
         }
+        
         Menu {
             title: qsTr("&Help")
             Action { text: qsTr("&About") }
@@ -31,9 +33,11 @@ Column {
 
     Row {
         width: parent.width
-        height:30
+        height: 30
+        
         Row {
             id: namesButton
+            
             height: parent.height
             width: 70
             spacing: 2
