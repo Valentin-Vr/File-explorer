@@ -9,7 +9,8 @@ ExecutionFile::ExecutionFile(QQuickItem *parent): QQuickPaintedItem(parent)
 
 void ExecutionFile::paint(QPainter *painter)
 {
-    QPixmap pixmap(m_filePath);
+    qDebug() << "paint" << m_filePath;
+    QPixmap pixmap("C:/Users/User/Desktop/img.jpg");
     QRectF source(0, 0, 0, 0);
     QRectF imageRect = boundingRect();
     imageRect.setSize(pixmap.size().scaled(boundingRect().size().toSize(),Qt::KeepAspectRatio));
@@ -17,15 +18,9 @@ void ExecutionFile::paint(QPainter *painter)
     painter->drawPixmap(imageRect, pixmap, source);
 }
 
-void ExecutionFile::openFile(const QString &path, const QString &flag)
+void ExecutionFile::openFile(const QString &path)
 {
-    if (flag == "jpg" || flag == "jpeg" || flag == "png") {
-        QQuickView view;
-        view.setSource(QStringLiteral("qrc:/FileOpenWindow.qml"));
-        QQuickPaintedItem::update();
-    } else {
-        QDesktopServices::openUrl(QUrl::fromLocalFile(path));
-    }
+    QDesktopServices::openUrl(QUrl::fromLocalFile(path));
 }
 
 void ExecutionFile::filePath(const QString &path)
@@ -34,4 +29,11 @@ void ExecutionFile::filePath(const QString &path)
         return;
     m_filePath = path;
     update();
+}
+
+void ExecutionFile::openImage(const QString &path)
+{
+    filePath(path);
+    qDebug() << "m_filePath =" << m_filePath;
+    QQuickPaintedItem::update();
 }

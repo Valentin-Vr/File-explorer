@@ -35,7 +35,7 @@ ApplicationWindow {
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
         onClicked: {
-            console.log("close")
+            openImageWindow.close()
         }
     }
 }

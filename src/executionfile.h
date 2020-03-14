@@ -11,8 +11,9 @@ public:
 
     void paint(QPainter *painter) override;
 
-    Q_INVOKABLE void openFile(const QString &path, const QString &flag);
+    Q_INVOKABLE void openFile(const QString &path);
     Q_INVOKABLE void filePath(const QString &path);
+    Q_INVOKABLE void openImage(const QString &path);
 
 private:
  QString m_filePath;

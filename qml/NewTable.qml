@@ -24,8 +24,15 @@ Rectangle {
                         dataModel.updateData(model.path)
                     }
                     else {
-                        workWithFiles.filePath(model.path)
-                        workWithFiles.openFile(model.path, model.flag)
+                        if (model.flag === "jpg" || model.flag === "png" || model.flag === "jpeg") {
+                            workWithFiles.openImage(model.path)
+                            var component = Qt.createComponent("FileOpenWindow.qml")
+                            var window = component.createObject("root")
+                            window.show()
+                        }
+                        else {
+                            workWithFiles.openFile(model.path)
+                        }
                     }
                 }
             }
