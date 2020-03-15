@@ -1,10 +1,18 @@
-import QtQuick 2.0
+import QtQuick 2.9
 import QtQuick.Controls 2.5
-
-
+import QtQuick.Layouts 1.11
+import space.developers 1.0
 Column {
     property var icons:["/imeg/home","/imeg/back"]
     property color backgroundColor: "transparent"
+
+//    SimplMenu {
+//        id:simplMenu
+//        visible: true
+//        width: parent.width
+//        height:40
+//    }
+
 
     MenuBar {
         width: parent.width
@@ -27,11 +35,24 @@ Column {
             title: qsTr("&Help")
             Action { text: qsTr("&About") }
         }
+
+
+        delegate: MenuBarItem {
+            id: menuBarItem
+
+            contentItem: Text {
+                text: menuBarItem.text
+                opacity: enabled ? 1.0 : 0.3
+                color: "white"
+                verticalAlignment: Text.AlignVCenter
+            }
+        }
     }
 
     Row {
         width: parent.width
         height:30
+        spacing: 4
         Row {
             id: namesButton
             height: parent.height
@@ -47,7 +68,7 @@ Column {
         }
 
         PathMenu {
-            width: parent.width-namesButton.width
+            width: parent.width - namesButton.width
             height:parent.height
         }
     }

@@ -23,6 +23,7 @@ Window {
         id: workFile
     }
 
+
     RectContextMenu {
         id: contextMenu
         visible: false
