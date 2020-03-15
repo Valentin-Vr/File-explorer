@@ -2,9 +2,9 @@ import QtQuick 2.0
 import QtGraphicalEffects 1.12
 
 Rectangle {
-    id: rootbutton
+    id: rootButton
     signal clicked()
-    color:backgroundColor
+    color: backgroundColor
     height: icon.height
 
     RadialGradient {
@@ -25,6 +25,6 @@ Rectangle {
     MouseArea {
         id: mouseArea
         anchors.fill: parent
-        onClicked: rootbutton.clicked()
+        onClicked: rootButton.clicked()
     }
 }

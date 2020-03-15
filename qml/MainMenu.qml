@@ -1,10 +1,15 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.5
+<<<<<<< HEAD
 import QtQuick.Layouts 1.11
 import space.developers 1.0
+=======
+
+>>>>>>> 10da46e02a4cc9c62f8f2fe9b8d2b15623941cab
 Column {
-    property var icons:["/imeg/home","/imeg/back"]
+    property var icons: ["/imeg/home","/imeg/back"]
     property color backgroundColor: "transparent"
+<<<<<<< HEAD
 
 //    SimplMenu {
 //        id:simplMenu
@@ -14,9 +19,13 @@ Column {
 //    }
 
 
+=======
+    
+>>>>>>> 10da46e02a4cc9c62f8f2fe9b8d2b15623941cab
     MenuBar {
         width: parent.width
-        height:40
+        height: 40
+        
         Menu {
             title: qsTr("&File")
             Action { text: qsTr("&Open...") }
@@ -25,12 +34,14 @@ Column {
             MenuSeparator { }
             Action { text: qsTr("&Quit") }
         }
+        
         Menu {
             title: qsTr("&Edit")
             Action { text: qsTr("Cu&t") }
             Action { text: qsTr("&Copy") }
             Action { text: qsTr("&Paste") }
         }
+        
         Menu {
             title: qsTr("&Help")
             Action { text: qsTr("&About") }
@@ -51,10 +62,16 @@ Column {
 
     Row {
         width: parent.width
+<<<<<<< HEAD
         height:30
         spacing: 4
+=======
+        height: 30
+        
+>>>>>>> 10da46e02a4cc9c62f8f2fe9b8d2b15623941cab
         Row {
             id: namesButton
+            
             height: parent.height
             width: 70
             spacing: 2
